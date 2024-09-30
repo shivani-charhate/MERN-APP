@@ -20,12 +20,12 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post("/api/v1/user/post/register", {
-        username: inputs.name,
+      const { data } = await axios.post("/api/v1/user/register", {
+        userName: inputs.name,
         email: inputs.email,
         password: inputs.password,
       });
-      if (data) {
+      if (data.sucess) {
         alert("New user register");
         navigate("/login");
       }
