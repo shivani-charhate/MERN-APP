@@ -10,6 +10,7 @@ import { store } from "./redux/store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
+  // wrap with redux
   <Provider store={store}>
     <BrowserRouter>
       <React.StrictMode>
