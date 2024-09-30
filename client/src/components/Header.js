@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   AppBar,
   Toolbar,
@@ -11,14 +11,20 @@ import {
 import { Link } from "react-router-dom";
 
 const Header = () => {
+  const [value, setvalue] = useState();
   return (
     <>
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h4">My Blog App</Typography>
-          <Box>
-            <Tabs textColour="inherit">
-              <Tab></Tab>
+          <Box display={"flex"} marginLeft="auto" marginRight={"auto"}>
+            <Tabs
+              textColor="inherit"
+              value={value}
+              onChange={(e, val) => setvalue(val)}
+            >
+              <Tab label="blogs" LinkComponent={Link} to="/blogs"></Tab>
+              <Tab label="My Blogs" LinkComponent={Link} to="/my-blogs"></Tab>
             </Tabs>
           </Box>
           <Box display={"flex"} marginLeft={"auto"}>
