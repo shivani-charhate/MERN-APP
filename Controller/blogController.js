@@ -33,7 +33,7 @@ exports.addBlogController = async (req, res) => {
 
 exports.getAllBlogController = async (req, res) => {
   try {
-    const blogs = await blogModel.find({});
+    const blogs = await blogModel.find({}).populate("user");
     if (!blogs) {
       return res.status(404).send({ message: "No blogs Found" });
     }
